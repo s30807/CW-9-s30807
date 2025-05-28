@@ -3,11 +3,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CW9.Models;
 
-[Table("Doctor")]
-public class Doctor
+[Table("Patient")]
+public class Patient
 {
     [Key]
-    public int IdDoctor { get; set; }
+    public int IdPatient { get; set; }
 
     [MaxLength(100)]
     public string FirstName { get; set; } = null!;
@@ -15,8 +15,7 @@ public class Doctor
     [MaxLength(100)]
     public string LastName { get; set; } = null!;
     
-    [MaxLength(100)]
-    public string Email { get; set; } = null!;
-
+    public DateTime  BirthDate { get; set; }
+    
     public virtual ICollection<Prescription> Prescriptions { get; set; } = null!;
 }
